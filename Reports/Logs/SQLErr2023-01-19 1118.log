@@ -1,0 +1,5 @@
+2023-01-19 11:18:37,379 Connection Failed
+Traceback (most recent call last):
+  File "c:\Users\jgoeken\OneDrive - MGM Resorts International\Documents\WindowsPowerShell\Scripts\Python\Reports\BonusAdjustmentByAdjustor_Headless.py", line 22, in Main
+    conn = pyodbc.connect('Driver={SQL Server};'
+pyodbc.OperationalError: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')

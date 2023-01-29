@@ -1,0 +1,5 @@
+2023-01-19 08:28:56,792 Connection Failed
+Traceback (most recent call last):
+  File "c:\Users\jgoeken\OneDrive - MGM Resorts International\Documents\WindowsPowerShell\Scripts\Python\Reports\Report-Bonus_Adjustment_By_Adjustor.py", line 26, in AssignVariable
+    conn = pyodbc.connect('Driver={SQL Server};'
+pyodbc.InterfaceError: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Login failed for user 'MGMMIRAGE\\jgoeken'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Login failed for user 'MGMMIRAGE\\jgoeken'. (18456)")
