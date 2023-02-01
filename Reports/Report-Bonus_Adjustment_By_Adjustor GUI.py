@@ -59,11 +59,11 @@ ttk.Label(root,text = 'Site',background='lightblue').grid(row=0,column=4,sticky=
 ttk.Label(root,text = 'Report',background='lightblue').grid(row=0,column=6,sticky='ew',padx=10,pady=5)
 dpStartDate = DateEntry(root,textvariable=strStartDate).grid(row=0,column = 1,padx=10,pady=5)
 dpEndDate = DateEntry(root,textvariable=strEndDate).grid(row=0,column = 3,padx=10,pady=5)
-#ttk.Entry(root,width=15,textvariable=strStartDate).grid(row=2,column = 2,padx=10,pady=5)
-#ttk.Entry(root,width=15,textvariable=strEndDate).grid(row=3,column = 2,padx=10,pady=5)
 ttk.Combobox(root,width=20,textvariable=strSiteID,values=Sites.loc[:,'Description'].to_list()).grid(row=0,column = 5,padx=10,pady=5,sticky='w')
 ttk.Combobox(root,width=40,height=20,textvariable=strReportName,values=Reports.loc[:,'name'].to_list()).grid(row=0,column = 7,padx=10,pady=5,sticky='w')
 btnGO = ttk.Button(root,text = "Request",command = AssignVariable).grid(row=0,column=9,padx=10,pady=10)
 
 lblStartDate = ttk.Label(root,text = lblStartDatetxt,background='lightblue').grid(row=1,column=1,sticky='w',padx=10,pady=5,columnspan=9)
+
+
 root.mainloop()
