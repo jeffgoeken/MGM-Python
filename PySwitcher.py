@@ -65,20 +65,32 @@ def GetDataSource():
     DBConnectFile = open ("C:\Program Files (x86)\Common Files\IGT Systems\DbConnInfoManager.dll.config","w")
     DBConnectFile.write(DBConnectInfo.format(DataSource))
     DBConnectFile.close()
-    os.startfile('C:\\Program Files (x86)\\IGT Systems\\Patron Management\\Patron.exe')   
+    if app.get() == 4:
+        os.startfile('C:\\Program Files (x86)\\IGT Systems\\Patron management\\Patron.exe') 
+    elif app.get() == 1:
+        os.startfile('C:\\Program Files (x86)\\IGT Systems\\CTA\\Guardian.exe')  
+    elif app.get() == 2:
+        os.startfile('C:\\Program Files (x86)\\IGT Systems\\CTA\\GTouch.exe') 
+    elif app.get() == 3:
+        os.startfile('C:\\Program Files (x86)\\IGT Systems\\CTA\\TbleDrop.exe') 
     root.destroy()
         
 
 # Create Frame inside Root Window
 pane = Frame(root)
 pane.title = 'PySwitcher'
+pane2 = Frame(root)
+pane2.title = 'Product'
+
 #geometry Method
+pane2.pack(fill = BOTH, expand = True,padx=10,pady=5)
 pane.pack(fill = BOTH, expand = True,padx=10,pady=5)
+
 
 # Tkinter string variable
 # able to store any string value
 v = StringVar(pane, "1")
-
+app = IntVar(pane2, 4)
 # Dictionary to create multiple buttons
 values = {"Aria" : "V00WAARACE11P",
         "Beau Rivage" : "V21WABRACE11P",
@@ -92,7 +104,7 @@ values = {"Aria" : "V00WAARACE11P",
         "Luxor" : "V00WALXACE11P",
         "Mandalay Bay":"V00WAMBACE11P",        
         "MGM Las Vegas" : "V00WAMMACE11P",
-        "Mirage" : "V00WAMRACE11P",
+        #"Mirage" : "V00WAMRACE11P",
         "National Harbor" : "V33WAACE11P",
         "New York, NY" : "V00WANYACE11P",
         "Northfield Park" : "V44WAACE11P",
@@ -123,6 +135,15 @@ for (text, value) in values.items():
         r +=1
     else:
         c += 1
+    rdobtnCTA = ttk.Radiobutton(pane2, text = "CTA", variable = app,value = 1)
+    rdobtnCTAtch = ttk.Radiobutton(pane2, text = "CTA Touch", variable = app,value = 2)
+    rdobtnCTAdrp = ttk.Radiobutton(pane2, text = "CTA Drop", variable = app,value = 3)
+    rdobtnCTAptrn = ttk.Radiobutton(pane2, text = "Patron Management", variable = app,value = 4)
+
+    rdobtnCTA.grid(row = 0, column=0,sticky='ew', padx=5,pady=2)
+    rdobtnCTAtch.grid(row = 0, column=1,sticky='ew', padx=5,pady=2)
+    rdobtnCTAdrp.grid(row = 0, column=2,sticky='ew', padx=5,pady=2)
+    rdobtnCTAptrn.grid(row = 0, column=3,sticky='ew', padx=5,pady=2)
 # Close event loop
 
 try:

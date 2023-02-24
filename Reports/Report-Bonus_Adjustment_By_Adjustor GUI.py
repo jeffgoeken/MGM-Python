@@ -17,10 +17,10 @@ Reports = pd.read_sql_query(ReportQuery, conn)
 print(Reports)
 
 dataTable = ({
-    'StartDate':['test','test2'],
-    'EndDate':['test','test2'],
-    'siteID':['test','test2'],
-    'Property':['test','test2']
+    'StartDate':[],
+    'EndDate':[],
+    'siteID':[],
+    'Property':[]
      })
 df = pd.DataFrame(dataTable)
 
